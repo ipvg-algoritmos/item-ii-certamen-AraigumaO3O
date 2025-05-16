@@ -11,22 +11,22 @@
 
 # 👇 Aquí comienza tu código
 
-notas = int(input("Cuantas notas ingresará"))
+cantidad_notas = int(input("¿Cuántas notas vas a ingresar? "))
 
 notas = []
-
-for i in range(cantidad):
-     nota = float(input(f"Ingrese la nota #{i+1} (1.0 a 7.0): "))
-     while nota <= 1.0 or nota > 7.0:
-           print("Nota fuera de rango. Intenta de nuevo.")
-        nota = float(input(f"Ingrese la nota #{i+1} (1.0 a 7.0): "))
+for i in range(cantidad_notas):
+    nota = float(input(f"Ingrese la nota #{i + 1} (entre 1.0 y 7.0): "))
+    while nota < 1.0 or nota > 7.0:
+        print("La nota debe estar entre 1.0 y 7.0. Inténtalo de nuevo.")
+        nota = float(input(f"Ingrese la nota #{i + 1} (entre 1.0 y 7.0): "))
     notas.append(nota)
 
+#promedio
+promedio = round(sum(notas) / cantidad_notas, 2)
 
-
-promedio = round(sum(notas) / cantidad, 2)
-print(f"\nPromedio: {promedio}")
+#para que sea suficiente para aprobar
 if promedio >= 4.0:
-    print("Aprobaste")
+    print(f"Aprobaste. Tu promedio es {promedio}.")
 else:
-    print("No aprobaste")
+     print(f"No aprobaste. Tu promedio es {promedio}.")
+     
