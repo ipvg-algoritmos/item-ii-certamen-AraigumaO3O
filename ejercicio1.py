@@ -9,3 +9,6 @@
 # 4. Luego, solicita al usuario un número y llama a la función con ese valor
 
 # 👇 Aquí comienza tu código
+numero = int(input("Seleccione un numero"))
+for n in range(1,11):
+    print(f"{numero} x {n} = {n*numero}")
